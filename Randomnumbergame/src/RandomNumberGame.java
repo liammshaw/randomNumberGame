@@ -10,14 +10,14 @@ public class RandomNumberGame
 		public static void main(String[] args)
 			{
 				greetPlayer();
-				while (wantToPlayAgain == true)
+				do
 					{
 						chooseDifficulty();
 						if (wantToPlayAgain == true)
 							{
 								int secretNumber = (int)(Math.random()*numberRange)+1;
 								System.out.println("Please guess a number between 1-" + numberRange);
-								while (guessing == false )
+								do
 									{
 										int userGuess = userInput.nextInt();
 										numberOfGuesses++;
@@ -62,8 +62,10 @@ public class RandomNumberGame
 												System.out.println("Too low, try again");	
 											}
 									}
+								while (guessing == false );
 							}
 					}
+				while (wantToPlayAgain == true);
 			}
 		public static void greetPlayer() 
 			{
